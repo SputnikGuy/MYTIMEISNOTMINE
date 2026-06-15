@@ -99,7 +99,7 @@ function render(data) {
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero" style="grid-template-columns: 1fr;">
         <div class="hero-copy">
           <div>
             <span class="eyebrow">${esc(data.hero?.eyebrow)}</span>
@@ -111,11 +111,6 @@ function render(data) {
             ${link(data.hero?.primaryCta || {}, "btn")}
             ${link(data.hero?.secondaryCta || {}, "btn secondary")}
           </div>
-        </div>
-
-        <div class="hero-visual" aria-label="Campaign portrait placeholder">
-          <div class="portrait-label">${esc(data.hero?.visualLabel)}</div>
-          <div class="floating-line">${esc(data.hero?.floatingLine)}</div>
         </div>
       </section>
 
