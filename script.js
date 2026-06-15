@@ -128,14 +128,19 @@ function render(data) {
       </section>
 
       <section class="manifesto" id="demand">
-        <div class="container manifesto-layout">
-          <h2 class="section-title manifesto-title">${esc(data.demand?.kicker)}</h2>
-          <div class="manifesto-content">
+        <div class="container">
+          <span class="manifesto-kicker">${esc(data.demand?.kicker)}</span>
+          <div>
             <div class="demand">${esc(data.demand?.main)}</div>
             <p class="demand-sub">${esc(data.demand?.body)}</p>
-            <h3 class="manifesto-closing">${esc(data.demand?.closing)}</h3>
-            <div class="manifesto-strip" aria-label="Manifesto cards">${manifestoCards}</div>
           </div>
+        </div>
+      </section>
+
+      <section class="stories" aria-label="Manifesto cards">
+        <div class="container">
+          <h2 class="section-title">${esc(data.demand?.closing)}</h2>
+          <div class="manifesto-strip">${manifestoCards}</div>
         </div>
       </section>
 
