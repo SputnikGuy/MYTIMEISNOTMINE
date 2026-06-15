@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "title": "My Time Is Not Mine",
+    "domain": "mytimeisnotmine.eu",
+    "language": "en"
+  },
+  "navigation": [
+    {
+      "label": "Campaign",
+      "target": "#stories"
+    },
+    {
+      "label": "Manifesto",
+      "target": "#demand"
+    },
+    {
+      "label": "KEEP Driven",
+      "target": "#keepdriven"
+    },
+    {
+      "label": "Journey",
+      "target": "#journey"
+    },
+    {
+      "label": "Take part",
+      "target": "#join"
+    },
+    {
+      "label": "Partners",
+      "target": "#partners"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Youth-led campaign",
+    "title": "My time is not mine",
+    "subtitle": "The right to independent living is also the right to your own time, and barriers keep taking it away.",
+    "description": "Part of KEEP Driven, an Erasmus+ project on participation co-financed by the European Union, where young people with disabilities from Italy, France and Latvia shaped a campaign on independent living.",
+    "primaryCta": {
+      "label": "Read our demand",
+      "target": "#demand"
+    },
+    "secondaryCta": {
+      "label": "Explore the campaign",
+      "target": "#stories"
+    },
+    "visualLabel": "Portrait / video area",
+    "floatingLine": "Our time belongs to us."
+  },
+  "campaign": {
+    "title": "Our time belongs to us",
+    "lead": "Drag or swipe to explore the campaign visuals. Tap a card to read the full story.",
+    "visuals": [
+      "Visual 01",
+      "Visual 02",
+      "Visual 03",
+      "Visual 04",
+      "Visual 05",
+      "Visual 06",
+      "Visual 07",
+      "Visual 08",
+      "Visual 09",
+      "Visual 10"
+    ]
+  },
+  "demand": {
+    "kicker": "Our demand",
+    "main": "We want to live independently.",
+    "body": "We want to decide how we live our daily lives. We want support service systems that adapt to our rhythms. We want accessible transport, flexible education and work opportunities, and the right to be heard when decisions about our lives are made. Our time belongs to us.",
+    "closing": "Not someday. Now.",
+    "cards": [
+      "We want to decide how we live our daily lives, without having to depend on other people's schedules.",
+      "We want support services that give us freedom and autonomy, adapt to our rhythms and health conditions, and allow us to take care of ourselves.",
+      "We want laws that truly guarantee independent living and are fully implemented in every country.",
+      "We want accessible public transport and support services that allow us to study, work, meet friends and participate fully in society.",
+      "We want flexible opportunities in work and education, without being pushed into isolation or excluded from participation.",
+      "We want to be heard and involved when decisions about our lives are made, because our experiences must help shape the society around us.",
+      "We want an equitable system for people with disabilities in Europe: a system that gives us choice, control and ownership over our own time and lives."
+    ]
+  },
+  "keepDriven": {
+    "title": "What is KEEP Driven",
+    "lead": "A pan-European advocacy project where young people with disabilities lead the way: training, study visits and collaborative workshops with participants from Italy, France, Belgium and Latvia.",
+    "pillars": [
+      {
+        "letter": "K",
+        "title": "Knowledge",
+        "text": "Sharing expertise through study visits."
+      },
+      {
+        "letter": "E",
+        "title": "Empowerment",
+        "text": "Skills and confidence through training."
+      },
+      {
+        "letter": "E",
+        "title": "Engagement",
+        "text": "Spaces for European dialogue."
+      },
+      {
+        "letter": "P",
+        "title": "Participation",
+        "text": "Inclusive democratic participation."
+      }
+    ],
+    "stats": [
+      {
+        "number": "4",
+        "title": "Countries",
+        "text": "Italy, France, Latvia and Belgium working together."
+      },
+      {
+        "number": "30+",
+        "title": "Young people with disabilities",
+        "text": "The voices behind this campaign."
+      },
+      {
+        "number": "40,000",
+        "title": "People",
+        "text": "Expected to be reached through the campaign."
+      }
+    ],
+    "behindTitle": "Who is behind this campaign?",
+    "behindText": "Young people with disabilities aged 18–26 from Italy, France and Latvia, with a priority on women. They are the authors and advocates of this campaign, not its subjects."
+  },
+  "journey": {
+    "title": "Our journey",
+    "lead": "From experience to action: how young people with disabilities became the authors of a European advocacy campaign.",
+    "items": [
+      {
+        "date": "June – July 2025",
+        "title": "Project launch",
+        "text": "Communication plan, visual identity and landing page go live."
+      },
+      {
+        "date": "Sept – Nov 2025",
+        "title": "Study visits",
+        "text": "Young participants travel across Italy, Latvia and France, exchanging knowledge with local disability organisations and documenting lived experiences."
+      },
+      {
+        "date": "Jan – Jun 2026",
+        "title": "Co-creating the campaign",
+        "text": "Participants work together to design and develop the advocacy campaign, messages, visuals and strategy, for a European audience."
+      },
+      {
+        "date": "June 2026",
+        "title": "Campaign launch",
+        "text": "The advocacy campaign is launched at European level, with national events in Italy, France and Latvia."
+      }
+    ]
+  },
+  "positionPaper": {
+    "eyebrow": "Position paper",
+    "title": "Not only visibility. Political change.",
+    "lead": "Young people with disabilities must be involved in the decisions that shape their future.",
+    "cta": "Download the position paper",
+    "url": "#"
+  },
+  "takePart": {
+    "title": "Share your story. Join the conversation.",
+    "text": "Have you ever felt that barriers, systems or inaccessible spaces were taking your time away? Join the campaign by spreading the word on social media.",
+    "hashtag": "#mytimeisnotmine"
+  },
+  "gallery": {
+    "title": "Behind the campaign",
+    "lead": "A visual archive of the campaign documenting the people and conversations behind “My time is not mine”.",
+    "items": [
+      "Photo area",
+      "Photo area",
+      "Photo area",
+      "Photo area",
+      "Photo area",
+      "Photo area"
+    ]
+  },
+  "partners": {
+    "title": "Partnership",
+    "lead": "An Erasmus+ partnership coordinated by CBM Italia, bringing together five organisations committed to disability inclusion and youth empowerment.",
+    "items": [
+      {
+        "role": "Project coordinator",
+        "name": "CBM Italia ETS",
+        "country": "Italy",
+        "featured": true
+      },
+      {
+        "role": "Partner",
+        "name": "European Disability Forum",
+        "country": "Belgium"
+      },
+      {
+        "role": "Partner",
+        "name": "APF France handicap",
+        "country": "France"
+      },
+      {
+        "role": "Partner",
+        "name": "LEDHA",
+        "country": "Italy"
+      },
+      {
+        "role": "Partner",
+        "name": "SUSTENTO",
+        "country": "Latvia"
+      },
+      {
+        "role": "Funding",
+        "name": "Co-funded by the European Union",
+        "country": "Erasmus+"
+      }
+    ],
+    "associatedTitle": "Associated partners",
+    "associated": [
+      "European Youth Forum",
+      "CFHE France",
+      "Italian Disability Forum",
+      "Lombardy Region"
+    ],
+    "fundingTitle": "Funding and transparency",
+    "fundingText": "Co-funded by the European Union. Views and opinions expressed are those of the author(s) only and do not necessarily reflect those of the EU or EACEA."
+  },
+  "footer": {
+    "items": [
+      "mytimeisnotmine.eu",
+      "KEEP Driven",
+      "Independent living is a right."
+    ]
+  }
+}
