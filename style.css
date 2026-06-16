@@ -1201,7 +1201,12 @@
   overflow: hidden;
   cursor: grab;
   user-select: none;
-  padding-top: 32px;
+  margin-top: 32px;
+  padding-top: 0;
+  border-top: var(--line) solid var(--black);
+  border-bottom: var(--line) solid var(--black);
+  border-left: 0;
+  border-right: 0;
 }
 .visual-strip.dragging { cursor: grabbing; }
 .visual-rail {
@@ -1217,7 +1222,7 @@
   background: #e5c222;
   background-position: center;
   background-size: cover;
-  border-top: 3px solid #000 !important;
+  border-top: 0 !important;
   border-bottom: none;
   border-left: none;
   border-right: none;
@@ -1298,6 +1303,9 @@
   user-select: none;
   will-change: transform;
 }
+.manifesto-cards-block {
+  border-top: var(--line) solid var(--black);
+}
 .manifesto-rail.dragging { cursor: grabbing !important; }
 .manifesto-card {
   flex: 0 0 38vw !important;
@@ -1310,7 +1318,6 @@
 .manifesto-card .card-text, .manifesto-card p { font-size: 28px !important; line-height: 1.35 !important; }
 .manifesto-card .card-number { font-size: 56px !important; }
 section.manifesto { border-bottom: none !important; }
-section.keep .section-eyebrow { border-top: none !important; }
 section.cta h2 { font-size: clamp(42px, 8vw, 112px) !important; line-height: 0.9 !important; }
 .hero-copy-inner { padding-left: calc(0.28 * (min(100vw, 1320px)) + clamp(16px, 2.2vw, 28px) + clamp(28px, 5vw, 72px)); }
   section.stories .section-lead { font-size: 24px !important; font-weight: 400 !important; line-height: 1.25 !important; }

@@ -53,8 +53,8 @@ function makeDraggableLoop(container, rail, options = {}) {
 
   const normalize = () => {
     if (!setWidth) return;
-    while (x > -setWidth * 0.5) x -= setWidth;
-    while (x < -setWidth * 1.5) x += setWidth;
+    while (x >= 0) x -= setWidth;
+    while (x <= -setWidth * 2) x += setWidth;
   };
 
   const apply = () => {
@@ -158,8 +158,12 @@ function setupStoryModal() {
     modal.setAttribute("aria-hidden", "true");
   };
 
-  qsa(".visual-card").forEach((card) => {
-    card.addEventListener("click", () => open(card));
+  qsa(".visual-strip").forEach((strip) => {
+    strip.addEventListener("click", (event) => {
+      const card = event.target.closest(".visual-card");
+      if (!card || !strip.contains(card) || strip.classList.contains("dragging")) return;
+      open(card);
+    });
   });
 
   close.addEventListener("click", hide);
