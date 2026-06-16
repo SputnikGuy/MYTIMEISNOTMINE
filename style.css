@@ -667,7 +667,8 @@
       padding: 24px;
       border-right: var(--line) solid var(--black);
       border-bottom: var(--line) solid var(--black);
-      background: var(--white);
+      background: var(--pink);
+      color: var(--black);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -691,8 +692,8 @@
       margin-top: 8px;
       font-size: clamp(15px, 1.4vw, 17px);
       line-height: 1.25;
-      font-weight: 700;
-      color: rgba(7,8,56,0.72);
+      font-weight: 400;
+      color: var(--black);
     }
 
     .stats-grid {
@@ -721,7 +722,7 @@
       line-height: 0.85;
       letter-spacing: 0;
       font-weight: 400;
-      color: var(--orange);
+      color: var(--pink);
     }
 
     .stat-title {
@@ -735,8 +736,8 @@
     .stat-copy {
       font-size: 15px;
       line-height: 1.35;
-      font-weight: 700;
-      color: rgba(255,255,255,0.76);
+      font-weight: 400;
+      color: var(--white);
     }
 
     .keep-behind {
@@ -1168,7 +1169,13 @@
       display: block;
       width: min(170px, 54vw);
       height: auto;
-      margin-bottom: 16px;
+      margin-top: 0.18em;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: flex-start;
+      gap: clamp(18px, 3vw, 34px);
     }
 
     .footer-brand p {
@@ -1181,16 +1188,6 @@
 
     .footer-brand p + p {
       margin-top: 14px;
-    }
-
-    .footer-nav h2 {
-      margin-bottom: 14px;
-      color: var(--white);
-      font-size: 14px;
-      line-height: 1.55;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
     }
 
     .footer-nav a {
@@ -1212,8 +1209,8 @@
     .footer-bottom {
       max-width: var(--max-width);
       margin: clamp(22px, 3vw, 34px) auto 0;
-      color: var(--white);
-      font-size: 14px;
+      color: rgba(255,255,255,0.52);
+      font-size: 12px;
       line-height: 1.55;
       font-weight: 400;
     }
