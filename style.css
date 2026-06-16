@@ -796,42 +796,43 @@
       color: var(--black);
     }
 
-    .gallery-grid {
+    .gallery-carousel {
+      position: relative;
+      width: 100vw;
+      left: 50%;
       margin-top: 42px;
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      transform: translateX(-50%);
+      overflow: hidden;
+      cursor: grab;
+      user-select: none;
       border-top: var(--line) solid var(--black);
-      border-left: var(--line) solid var(--black);
-    }
-
-    .gallery-cell {
-      min-height: clamp(210px, 20vw, 260px);
-      border-right: var(--line) solid var(--black);
       border-bottom: var(--line) solid var(--black);
-      background: rgba(255,255,255,0.55);
+    }
+
+    .gallery-carousel.dragging {
+      cursor: grabbing;
+    }
+
+    .gallery-rail {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 22px;
-      font-size: clamp(22px, 2.2vw, 28px);
-      line-height: 0.95;
-      text-transform: uppercase;
-      font-weight: 950;
-      text-align: center;
-      letter-spacing: 0;
+      flex-direction: row;
+      gap: 0;
+      will-change: transform;
     }
 
-    .gallery-cell:nth-child(1),
-    .gallery-cell:nth-child(6) {
-      grid-column: span 2;
-      min-height: clamp(260px, 28vw, 340px);
+    .gallery-card {
+      flex: 0 0 calc(100vw / 3);
+      min-width: calc(100vw / 3);
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--white);
     }
 
-    .gallery-cell:nth-child(2),
-    .gallery-cell:nth-child(3),
-    .gallery-cell:nth-child(4),
-    .gallery-cell:nth-child(5) {
-      grid-column: span 2;
+    .gallery-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .partners {
@@ -1245,9 +1246,11 @@
 }
 @media (max-width: 768px) {
   .visual-card { flex: 0 0 100vw !important; min-width: 100vw !important; }
+  .gallery-card { flex: 0 0 100vw !important; min-width: 100vw !important; }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   .visual-card { flex: 0 0 50vw !important; min-width: 50vw !important; }
+  .gallery-card { flex: 0 0 50vw !important; min-width: 50vw !important; }
 }
 .story-modal {
   display: none;
@@ -1282,6 +1285,9 @@
   padding: 24px 40px 40px;
   font-size: 18px;
   line-height: 1.6;
+}
+.modal-body p {
+  white-space: pre-line;
 }
 .modal-close {
   position: absolute;
