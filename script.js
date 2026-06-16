@@ -73,6 +73,7 @@ function makeDraggableLoop(container, rail, options = {}) {
   const onPointerDown = (event) => {
     pointerDown = true;
     moved = false;
+    container.dataset.dragMoved = "false";
     startX = event.clientX;
     startOffset = x;
     container.classList.add("dragging");
@@ -83,15 +84,20 @@ function makeDraggableLoop(container, rail, options = {}) {
   const onPointerMove = (event) => {
     if (!pointerDown) return;
     const delta = event.clientX - startX;
-    if (Math.abs(delta) > 6) moved = true;
+    if (Math.abs(delta) > 6) {
+      moved = true;
+      container.dataset.dragMoved = "true";
+    }
     x = startOffset + delta;
     apply();
   };
 
   const onPointerUp = (event) => {
     pointerDown = false;
+    container.dataset.dragMoved = moved ? "true" : "false";
     window.setTimeout(() => {
       moved = false;
+      container.dataset.dragMoved = "false";
     }, 0);
     container.classList.remove("dragging");
     container.releasePointerCapture?.(event.pointerId);
@@ -159,9 +165,19 @@ function setupStoryModal() {
   };
 
   qsa(".visual-strip").forEach((strip) => {
+    strip.addEventListener("pointerup", (event) => {
+      window.setTimeout(() => {
+        if (strip.dataset.dragMoved === "true") return;
+        const target = document.elementFromPoint(event.clientX, event.clientY);
+        const card = target?.closest?.(".visual-card");
+        if (!card || !strip.contains(card)) return;
+        open(card);
+      }, 0);
+    });
+
     strip.addEventListener("click", (event) => {
       const card = event.target.closest(".visual-card");
-      if (!card || !strip.contains(card) || strip.classList.contains("dragging")) return;
+      if (!card || !strip.contains(card) || strip.dataset.dragMoved === "true") return;
       open(card);
     });
   });
