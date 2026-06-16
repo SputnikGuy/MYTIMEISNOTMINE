@@ -11,13 +11,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Lacquer&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20260616-10" />
+  <link rel="stylesheet" href="style.css?v=20260616-11" />
 </head>
 <body>
   <div id="app" class="">
     <header class="site-header">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <a class="logo" href="#">MY TIME<br>IS NOT MINE</a>
-      <nav class="nav" aria-label="Main navigation"><a href="#stories">Campaign</a><a href="#demand">Manifesto</a><a href="#keepdriven">KEEP Driven</a><a href="#journey">Journey</a><a href="#join">Take part</a><a href="#partners">Partners</a></nav>
+      <nav class="nav" id="main-nav" aria-label="Main navigation"><a href="#stories">Campaign</a><a href="#demand">Manifesto</a><a href="#keepdriven">KEEP Driven</a><a href="#journey">Journey</a><a href="#join">Take part</a><a href="#partners">Partners</a></nav>
     </header>
 
     <main>
@@ -165,36 +170,36 @@
         <p>Inclusive democratic participation.</p>
       </article>
     </div>
-            <div class="stats-grid">
-      <article class="stat-card">
-        <div class="stat-number">4</div>
-        <div>
-          <div class="stat-title">Countries</div>
-          <div class="stat-copy">Italy, France, Latvia and Belgium working together.</div>
-        </div>
-      </article>
-    
-      <article class="stat-card">
-        <div class="stat-number">30+</div>
-        <div>
-          <div class="stat-title">Young people with disabilities</div>
-          <div class="stat-copy">The voices behind this campaign.</div>
-        </div>
-      </article>
-    
-      <article class="stat-card">
-        <div class="stat-number">40.000</div>
-        <div>
-          <div class="stat-title">People</div>
-          <div class="stat-copy">Expected to be reached through the campaign.</div>
-        </div>
-      </article>
-    </div>
           </div>
           <div class="keep-behind">
             <span class="section-eyebrow">Who is behind this campaign?</span>
             <p>Young people with disabilities aged 18–26 from Italy, France and Latvia, with a priority on women. They are the authors and advocates of this campaign, not its subjects.</p>
           </div>
+        </div>
+        <div class="stats-grid">
+          <article class="stat-card">
+            <div class="stat-number">4</div>
+            <div>
+              <div class="stat-title">Countries</div>
+              <div class="stat-copy">Italy, France, Latvia and Belgium working together.</div>
+            </div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-number">30+</div>
+            <div>
+              <div class="stat-title">Young people with disabilities</div>
+              <div class="stat-copy">The voices behind this campaign.</div>
+            </div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-number">40.000</div>
+            <div>
+              <div class="stat-title">People</div>
+              <div class="stat-copy">Expected to be reached through the campaign.</div>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -375,8 +380,24 @@
       </section>
     </main>
 
-    <footer>
-      <div class="footer-inner"><span>mytimeisnotmine.eu</span><span>KEEP Driven</span><span>Independent living is a right.</span></div>
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/keep-driven-logo.svg" alt="KEEP Driven">
+          <p>Knowledge, Empowerment, Engagement, Participation.</p>
+          <p>An Erasmus+ project across Belgium, France, Italy and Latvia.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h2>Navigate</h2>
+          <a href="#stories">Campaign</a>
+          <a href="#demand">Manifesto</a>
+          <a href="#keepdriven">KEEP Driven</a>
+          <a href="#journey">Journey</a>
+          <a href="#join">Take part</a>
+          <a href="#partners">Partners</a>
+        </nav>
+      </div>
+      <p class="footer-bottom">2025 KEEP Driven. Co-funded by the European Union.</p>
     </footer>
   </div>
 
@@ -397,6 +418,6 @@
     <img src="" alt="">
   </div>
 
-  <script src="script.js?v=20260616-7" defer></script>
+  <script src="script.js?v=20260616-8" defer></script>
 </body>
 </html>

@@ -359,6 +359,33 @@ function setupManifestoSlider() {
   show(activeIndex);
 }
 
+function setupMobileMenu() {
+  const header = qs(".site-header");
+  if (!header) return;
+
+  const toggle = qs(".menu-toggle", header);
+  const nav = qs(".nav", header);
+  if (!toggle || !nav) return;
+
+  const closeMenu = () => {
+    header.classList.remove("menu-open");
+    toggle.setAttribute("aria-expanded", "false");
+  };
+
+  toggle.addEventListener("click", () => {
+    const isOpen = header.classList.toggle("menu-open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  nav.addEventListener("click", (event) => {
+    if (event.target.closest("a")) closeMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+}
+
 async function setupGalleryCarousel() {
   const carousel = qs(".gallery-carousel");
   const rail = qs(".gallery-rail");
@@ -391,6 +418,7 @@ async function setupGalleryCarousel() {
 }
 
 async function init() {
+  setupMobileMenu();
   const openStory = setupStoryModal();
   const visualStrip = qs(".visual-strip");
   const visualRail = qs(".visual-rail");
