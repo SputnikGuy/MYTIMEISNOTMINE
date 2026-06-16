@@ -401,7 +401,7 @@
     }
 
     .manifesto .container {
-      padding-bottom: 0;
+      padding-bottom: var(--space-section);
     }
 
     .manifesto-content {
@@ -453,6 +453,7 @@
     .manifesto-slider {
       border: var(--line) solid var(--black);
       background: var(--white);
+      box-shadow: none;
     }
 
     .manifesto-card {
@@ -670,11 +671,17 @@
     }
 
     .keep-behind {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: minmax(190px, 0.28fr) minmax(0, 1fr);
+      gap: clamp(28px, 5vw, 72px);
+      align-items: start;
       margin-top: 44px;
       color: var(--black);
     }
 
     .keep-behind p {
+      grid-column: 2;
       max-width: 920px;
       font-size: var(--text-lead);
       line-height: 1.02;
@@ -855,6 +862,7 @@
       background: var(--cyan);
       color: var(--white);
       border-top: 0;
+      margin-top: -2px;
     }
 
     .partners .section-eyebrow {
@@ -969,8 +977,17 @@
     }
 
     .funding-block {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: minmax(190px, 0.28fr) minmax(0, 1fr);
+      gap: clamp(28px, 5vw, 72px);
+      align-items: start;
       margin-top: clamp(54px, 7vw, 96px);
       padding-top: 0;
+    }
+
+    .funding-content {
+      grid-column: 2;
     }
 
     .funding-logo-grid {
@@ -1321,6 +1338,16 @@
   .partner-grid,
   .funding-logo-grid {
     grid-template-columns: 1fr;
+  }
+
+  .keep-behind,
+  .funding-block {
+    grid-template-columns: 1fr;
+  }
+
+  .keep-behind p,
+  .funding-content {
+    grid-column: 1;
   }
 }
 .story-modal {
