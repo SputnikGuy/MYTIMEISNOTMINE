@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Lacquer&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20260616-6" />
+  <link rel="stylesheet" href="style.css?v=20260616-7" />
 </head>
 <body>
   <div id="app" class="">
@@ -24,7 +24,7 @@
       <section class="hero">
         <div class="hero-copy">
           
-        <div class="container" style=""><div class="section-layout"><span class="section-eyebrow">MY TIME IS NOT MINE</span><div class="section-content">
+        <div class="container" style=""><div class="section-layout"><span class="hero-eyebrow-spacer" aria-hidden="true"></span><div class="section-content">
             <h1 style="line-height: 1;">My time is <span style="background:#000;color:#fff;display:inline-block;vertical-align:middle;line-height:1;padding:0.05em 0.1em;margin:-0.15em 0;">NOT</span> mine</h1>
             <p class="hero-sub">The right to independent living is also the right to your own time, and barriers keep taking it away.</p>
             <p class="hero-note">Part of KEEP Driven, an Erasmus+ project on participation co-financed by the European Union, where young people with disabilities from Italy, France and Latvia shaped a campaign on independent living.</p>
@@ -84,8 +84,9 @@
             </p>
           </div>
           <div class="manifesto-cards-block" aria-label="Manifesto cards">
-            <div class="manifesto-strip manifesto-rail">
-      <article class="manifesto-card">
+            <button class="manifesto-arrow manifesto-prev" type="button" aria-label="Previous manifesto card">‹</button>
+            <div class="manifesto-slider" aria-live="polite">
+      <article class="manifesto-card active">
         <span class="card-number">01</span>
         <p class="card-text">We want to decide how we live our daily lives, without having to depend on other people's schedules.</p>
       </article>
@@ -120,6 +121,7 @@
         <p class="card-text">We want an equitable system for people with disabilities in Europe: a system that gives us choice, control and ownership over our own time and lives.</p>
       </article>
     </div>
+            <button class="manifesto-arrow manifesto-next" type="button" aria-label="Next manifesto card">›</button>
           </div>
         </div>
       </section>
@@ -188,8 +190,8 @@
         </div>
       </article>
     </div>
-            <div class="callout">
-              <h3>Who is behind this campaign?</h3>
+            <div class="keep-behind">
+              <span class="section-eyebrow">Who is behind this campaign?</span>
               <p>Young people with disabilities aged 18–26 from Italy, France and Latvia, with a priority on women. They are the authors and advocates of this campaign, not its subjects.</p>
             </div>
           </div>
@@ -286,7 +288,7 @@
               <article class="partner-card coordinator">
                 <div>
                   <div class="partner-kicker">Project coordinator</div>
-                  <h3 class="partner-title">CBM Italia ETS</h3>
+                  <h3 class="partner-title"><a href="https://www.cbmitalia.org/" target="_blank" rel="noopener">CBM Italia ETS</a></h3>
                   <div class="partner-country">Italy</div>
                 </div>
                 <a class="partner-logo-link" href="https://www.cbmitalia.org/" target="_blank" rel="noopener">
@@ -297,7 +299,7 @@
               <article class="partner-card">
                 <div>
                   <div class="partner-kicker">Partner</div>
-                  <h3 class="partner-title">European Disability Forum</h3>
+                  <h3 class="partner-title"><a href="https://www.edf-feph.org/" target="_blank" rel="noopener">European Disability Forum</a></h3>
                   <div class="partner-country">Belgium</div>
                 </div>
                 <a class="partner-logo-link" href="https://www.edf-feph.org/" target="_blank" rel="noopener">
@@ -308,7 +310,7 @@
               <article class="partner-card">
                 <div>
                   <div class="partner-kicker">Partner</div>
-                  <h3 class="partner-title">APF France handicap</h3>
+                  <h3 class="partner-title"><a href="https://www.apf-francehandicap.org/" target="_blank" rel="noopener">APF France handicap</a></h3>
                   <div class="partner-country">France</div>
                 </div>
                 <a class="partner-logo-link" href="https://www.apf-francehandicap.org/" target="_blank" rel="noopener">
@@ -319,7 +321,7 @@
               <article class="partner-card">
                 <div>
                   <div class="partner-kicker">Partner</div>
-                  <h3 class="partner-title">LEDHA</h3>
+                  <h3 class="partner-title"><a href="https://www.ledha.it/" target="_blank" rel="noopener">LEDHA</a></h3>
                   <div class="partner-country">Italy</div>
                 </div>
                 <a class="partner-logo-link" href="https://www.ledha.it/" target="_blank" rel="noopener">
@@ -330,7 +332,7 @@
               <article class="partner-card">
                 <div>
                   <div class="partner-kicker">Partner</div>
-                  <h3 class="partner-title">SUSTENTO</h3>
+                  <h3 class="partner-title"><a href="https://www.sustento.lv/" target="_blank" rel="noopener">SUSTENTO</a></h3>
                   <div class="partner-country">Latvia</div>
                 </div>
                 <a class="partner-logo-link" href="https://www.sustento.lv/" target="_blank" rel="noopener">
@@ -354,7 +356,6 @@
 
             <div class="funding-block">
               <span class="section-eyebrow">Funding and transparency</span>
-              <h2 class="funding-title">Co-funded by the European Union</h2>
               <div class="funding-logo-grid">
                 <a class="funding-logo-card" href="https://erasmus-plus.ec.europa.eu/" target="_blank" rel="noopener">
                   <img src="logos/Erasmus.png" alt="Erasmus+">
@@ -394,6 +395,6 @@
     <img src="" alt="">
   </div>
 
-  <script src="script.js?v=20260616-5" defer></script>
+  <script src="script.js?v=20260616-7" defer></script>
 </body>
 </html>

@@ -339,6 +339,26 @@ function setupImageModal() {
   return open;
 }
 
+function setupManifestoSlider() {
+  const cards = qsa(".manifesto-slider .manifesto-card");
+  const prev = qs(".manifesto-prev");
+  const next = qs(".manifesto-next");
+  if (!cards.length || !prev || !next) return;
+
+  let activeIndex = Math.max(0, cards.findIndex((card) => card.classList.contains("active")));
+
+  const show = (index) => {
+    activeIndex = (index + cards.length) % cards.length;
+    cards.forEach((card, cardIndex) => {
+      card.classList.toggle("active", cardIndex === activeIndex);
+    });
+  };
+
+  prev.addEventListener("click", () => show(activeIndex - 1));
+  next.addEventListener("click", () => show(activeIndex + 1));
+  show(activeIndex);
+}
+
 async function setupGalleryCarousel() {
   const carousel = qs(".gallery-carousel");
   const rail = qs(".gallery-rail");
@@ -382,12 +402,8 @@ async function init() {
     });
   }
 
-  const manifestoRail = qs(".manifesto-rail");
-  if (manifestoRail) {
-    makeDraggableLoop(manifestoRail, manifestoRail, { speed: 0.25 });
-  }
-
   setupPosterImages();
+  setupManifestoSlider();
   await setupGalleryCarousel();
 }
 
