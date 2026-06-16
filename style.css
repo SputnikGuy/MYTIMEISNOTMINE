@@ -948,12 +948,12 @@
     }
 
     .paper .btn {
-      background: var(--white);
+      background: var(--pink);
       color: var(--black);
     }
 
     .paper .btn:hover {
-      background: var(--pink);
+      background: var(--white);
       color: var(--black);
     }
 
@@ -1192,14 +1192,16 @@
     .funding-logo-grid {
       margin-top: 10px;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 220px));
+      width: fit-content;
+      max-width: 100%;
       border-top: var(--line) solid var(--black);
       border-left: var(--line) solid var(--black);
     }
 
     .funding-logo-card {
-      min-height: 220px;
-      padding: clamp(24px, 4vw, 52px);
+      min-height: 176px;
+      padding: clamp(18px, 2.4vw, 32px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1210,8 +1212,8 @@
 
     .funding-logo-card img {
       display: block;
-      max-width: min(100%, 360px);
-      max-height: 140px;
+      max-width: min(100%, 230px);
+      max-height: 96px;
       object-fit: contain;
     }
 
@@ -1432,6 +1434,11 @@
         line-height: 0.86 !important;
       }
 
+      .hero h1 {
+        font-size: clamp(58px, 16vw, 88px) !important;
+        line-height: 0.86 !important;
+      }
+
       .manifesto-closing {
         font-size: clamp(58px, 16vw, 88px);
         line-height: 0.86;
@@ -1440,8 +1447,16 @@
       .highlight-inline-mobile {
         display: inline;
         width: auto;
+        position: relative;
+        top: 0.06em;
+        padding: 0 0.07em 0.01em;
+        line-height: 0.92;
         -webkit-box-decoration-break: clone;
         box-decoration-break: clone;
+      }
+
+      .paper .section-title {
+        line-height: 0.98 !important;
       }
 
       .cta {
@@ -1503,6 +1518,12 @@
         margin-right: -16px;
       }
 
+      .demand {
+        font-size: clamp(48px, 13.8vw, 64px) !important;
+        max-width: calc(100vw - 32px);
+        overflow-wrap: normal;
+      }
+
       .story-card {
         min-width: 86vw;
         min-height: 340px;
@@ -1541,14 +1562,36 @@
       }
 
       .keep-card,
-      .stat-card,
       .partner-card,
       .partner-card.coordinator {
         min-height: 300px;
       }
 
+      .keep-grid {
+        grid-template-columns: repeat(4, max-content);
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+      .keep-card {
+        width: max-content;
+        min-width: 0;
+        min-height: 260px;
+        padding: 20px 22px;
+        justify-content: flex-start;
+      }
+
       .keep-letter {
         font-size: clamp(118px, 34vw, 160px);
+      }
+
+      .keep-card h3 {
+        margin-top: 8px;
+      }
+
+      .keep-card p {
+        max-width: 13ch;
+        margin-top: 0;
       }
 
       .stats-grid {
