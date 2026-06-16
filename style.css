@@ -1715,6 +1715,6 @@
 section.manifesto { border-bottom: none !important; }
 section.cta h2 { font-size: clamp(42px, 8vw, 112px) !important; line-height: 0.9 !important; }
 .hero-copy-inner { padding-left: calc(0.28 * (min(100vw, 1320px)) + clamp(16px, 2.2vw, 28px) + clamp(28px, 5vw, 72px)); }
-  section.stories .section-lead { font-size: 24px !important; font-weight: 400 !important; line-height: 1.25 !important; }
+  section.stories .section-lead { font-size: 12px !important; font-weight: 400 !important; line-height: 1.35 !important; }
   section.stories .container { padding-bottom: 0 !important; }
   section.manifesto .container { row-gap: 32px !important; }
