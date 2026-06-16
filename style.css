@@ -1215,6 +1215,8 @@
   min-width: calc(100vw / 3);
   aspect-ratio: 4/5;
   background: #e5c222;
+  background-position: center;
+  background-size: cover;
   border-top: 3px solid #000 !important;
   border-bottom: none;
   border-left: none;
@@ -1226,6 +1228,17 @@
   font-weight: 700;
   cursor: pointer;
   overflow: hidden;
+  text-transform: uppercase;
+}
+.visual-card-title {
+  font-family: "BBH Bogle", Impact, "Arial Black", sans-serif;
+  font-size: clamp(42px, 7vw, 112px);
+  font-weight: 400;
+  line-height: 0.9;
+  pointer-events: none;
+}
+.visual-card.poster-loaded .visual-card-title {
+  opacity: 0;
 }
 @media (max-width: 768px) {
   .visual-card { flex: 0 0 100vw !important; min-width: 100vw !important; }

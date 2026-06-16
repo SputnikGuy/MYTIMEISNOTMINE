@@ -114,6 +114,27 @@ function makeDraggableLoop(container, rail, options = {}) {
   };
 }
 
+function setupPosterImages() {
+  const posterPaths = new Set(
+    qsa(".visual-card")
+      .map((card) => card.dataset.poster)
+      .filter(Boolean)
+  );
+
+  posterPaths.forEach((posterPath) => {
+    const image = new Image();
+
+    image.addEventListener("load", () => {
+      qsa(`.visual-card[data-poster="${posterPath}"]`).forEach((card) => {
+        card.style.backgroundImage = `url("${posterPath}")`;
+        card.classList.add("poster-loaded");
+      });
+    });
+
+    image.src = posterPath;
+  });
+}
+
 function setupStoryModal() {
   const modal = qs(".story-modal");
   if (!modal) return;
@@ -162,6 +183,7 @@ function init() {
     makeDraggableLoop(manifestoRail, manifestoRail, { speed: 0.25 });
   }
 
+  setupPosterImages();
   setupStoryModal();
 }
 
