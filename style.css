@@ -370,7 +370,17 @@
 
     .stories {
       background: var(--cyan);
+      color: var(--white);
       border-bottom: 0;
+    }
+
+    .stories .section-eyebrow {
+      border-color: var(--white);
+    }
+
+    .stories .section-title,
+    .stories .section-lead {
+      color: var(--white);
     }
 
     .visual-strip,
