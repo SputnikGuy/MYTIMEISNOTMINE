@@ -192,7 +192,7 @@
     }
 
     .hero .container {
-      padding-bottom: 0;
+      padding-bottom: var(--space-section);
     }
 
     .hero .section-layout {
@@ -991,7 +991,7 @@
       font-family: "Lacquer", Arial, Helvetica, sans-serif;
       font-size: clamp(40px, 5.5vw, 88px);
       line-height: 0.9;
-      color: var(--black);
+      color: var(--white);
     }
 
     .gallery {
@@ -1412,6 +1412,33 @@
         padding: 36px 16px;
       }
 
+      .hero .container {
+        padding-top: 56px;
+        padding-bottom: 56px;
+      }
+
+      .section-title,
+      .demand,
+      .cta h2 {
+        font-size: clamp(58px, 16vw, 88px) !important;
+        line-height: 0.86 !important;
+      }
+
+      .manifesto-closing {
+        font-size: clamp(58px, 16vw, 88px);
+        line-height: 0.86;
+      }
+
+      .cta {
+        min-height: auto;
+        place-items: stretch;
+      }
+
+      .cta .container {
+        padding-top: 34px;
+        padding-bottom: 38px;
+      }
+
       .hero-sub {
         margin-top: 28px;
       }
@@ -1796,7 +1823,9 @@
   font-size: clamp(64px, 7vw, 118px);
 }
 section.manifesto { border-bottom: none !important; }
-section.cta h2 { font-size: clamp(42px, 8vw, 112px) !important; line-height: 0.9 !important; }
+@media (min-width: 621px) {
+  section.cta h2 { font-size: clamp(42px, 8vw, 112px) !important; line-height: 0.9 !important; }
+}
 .hero-copy-inner { padding-left: calc(0.28 * (min(100vw, 1320px)) + clamp(16px, 2.2vw, 28px) + clamp(28px, 5vw, 72px)); }
   section.stories .section-lead { font-size: 18px !important; font-weight: 400 !important; line-height: 1.35 !important; }
   section.stories .container { padding-bottom: 0 !important; }
