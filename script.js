@@ -126,6 +126,7 @@ function makeDraggableLoop(container, rail, options = {}) {
   let moved = false;
   let frame = null;
   const speed = options.speed || 0;
+  const dragMultiplier = options.dragMultiplier || 1;
 
   const measure = () => {
     const originals = qsa(":scope > *:not([data-clone])", rail);
@@ -176,7 +177,7 @@ function makeDraggableLoop(container, rail, options = {}) {
       moved = true;
       container.dataset.dragMoved = "true";
     }
-    x = startOffset + delta;
+    x = startOffset + (delta * dragMultiplier);
     apply();
   };
 
@@ -411,7 +412,8 @@ async function setupGalleryCarousel() {
   if (images.length) {
     makeDraggableLoop(carousel, rail, {
       onTap: openImage,
-      speed: -0.25,
+      dragMultiplier: 1.45,
+      speed: -0.35,
       tapSelector: ".gallery-card",
     });
   }
@@ -425,7 +427,8 @@ async function init() {
   if (visualStrip && visualRail) {
     makeDraggableLoop(visualStrip, visualRail, {
       onTap: openStory,
-      speed: 0.35,
+      dragMultiplier: 1.55,
+      speed: 0.48,
       tapSelector: ".visual-card",
     });
   }
