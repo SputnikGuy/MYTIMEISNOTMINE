@@ -1192,7 +1192,7 @@
     .funding-logo-grid {
       margin-top: 10px;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 220px));
+      grid-template-columns: repeat(2, minmax(0, 280px));
       width: fit-content;
       max-width: 100%;
       border-top: var(--line) solid var(--black);
@@ -1200,8 +1200,8 @@
     }
 
     .funding-logo-card {
-      min-height: 176px;
-      padding: clamp(18px, 2.4vw, 32px);
+      min-height: 196px;
+      padding: clamp(22px, 3vw, 40px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1212,8 +1212,8 @@
 
     .funding-logo-card img {
       display: block;
-      max-width: min(100%, 230px);
-      max-height: 96px;
+      max-width: min(100%, 280px);
+      max-height: 118px;
       object-fit: contain;
     }
 
@@ -1227,8 +1227,7 @@
       max-width: var(--max-width);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(240px, 0.8fr) minmax(180px, 0.4fr);
-      gap: clamp(38px, 8vw, 140px);
+      grid-template-columns: minmax(240px, 0.55fr);
       align-items: start;
     }
 
@@ -1435,7 +1434,7 @@
       }
 
       .hero h1 {
-        font-size: clamp(78px, 19vw, 104px) !important;
+        font-size: clamp(66px, 17.2vw, 92px) !important;
         line-height: 0.9 !important;
         max-width: 100%;
       }
@@ -1582,6 +1581,7 @@
       .keep-grid {
         grid-template-columns: repeat(4, max-content);
         max-width: 100%;
+        margin-left: 0;
         overflow-x: auto;
       }
 
