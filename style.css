@@ -299,6 +299,7 @@
 
     .stories {
       background: var(--white);
+      border-bottom: 0;
     }
 
     .visual-strip,
@@ -464,13 +465,10 @@
       background: var(--white);
     }
 
-    .manifesto-card:nth-child(1),
-    .manifesto-card:nth-child(7) { background: var(--orange); color: var(--black); }
-    .manifesto-card:nth-child(2),
-    .manifesto-card:nth-child(5) { background: var(--cyan); color: var(--white); }
-    .manifesto-card:nth-child(3),
-    .manifesto-card:nth-child(6) { background: var(--pink); color: var(--black); }
-    .manifesto-card:nth-child(4) { background: var(--black); color: var(--white); }
+    .manifesto-card:nth-child(n) {
+      background: var(--white);
+      color: var(--black);
+    }
 
     .card-number {
       font-family: "BBH Bogle", Impact, Arial Black, sans-serif;
@@ -1300,17 +1298,22 @@
   flex-direction: row !important;
   overflow: visible !important;
   cursor: grab;
+  margin-top: 0 !important;
+  border-top: var(--line) solid var(--black) !important;
+  border-left: 0 !important;
   user-select: none;
   will-change: transform;
 }
 .manifesto-cards-block {
-  border-top: var(--line) solid var(--black);
+  border-top: 0;
 }
 .manifesto-rail.dragging { cursor: grabbing !important; }
 .manifesto-card {
   flex: 0 0 38vw !important;
   min-width: 38vw !important;
   box-sizing: border-box;
+  background: var(--white) !important;
+  color: var(--black) !important;
 }
 @media (max-width: 768px) {
   .manifesto-card { flex: 0 0 85vw !important; min-width: 85vw !important; }

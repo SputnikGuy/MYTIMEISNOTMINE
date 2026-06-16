@@ -93,14 +93,25 @@ function makeDraggableLoop(container, rail, options = {}) {
   };
 
   const onPointerUp = (event) => {
+    const didMove = moved;
     pointerDown = false;
-    container.dataset.dragMoved = moved ? "true" : "false";
+    container.dataset.dragMoved = didMove ? "true" : "false";
+    container.classList.remove("dragging");
+    container.releasePointerCapture?.(event.pointerId);
+
+    if (!didMove && options.tapSelector && typeof options.onTap === "function") {
+      const target = document.elementFromPoint(event.clientX, event.clientY);
+      const tapTarget = target?.closest?.(options.tapSelector);
+
+      if (tapTarget && container.contains(tapTarget)) {
+        options.onTap(tapTarget);
+      }
+    }
+
     window.setTimeout(() => {
       moved = false;
       container.dataset.dragMoved = "false";
     }, 0);
-    container.classList.remove("dragging");
-    container.releasePointerCapture?.(event.pointerId);
   };
 
   container.addEventListener("pointerdown", onPointerDown);
@@ -143,7 +154,7 @@ function setupPosterImages() {
 
 function setupStoryModal() {
   const modal = qs(".story-modal");
-  if (!modal) return;
+  if (!modal) return () => {};
 
   const title = qs("#story-modal-title", modal);
   const body = qs(".modal-body p", modal);
@@ -164,24 +175,6 @@ function setupStoryModal() {
     modal.setAttribute("aria-hidden", "true");
   };
 
-  qsa(".visual-strip").forEach((strip) => {
-    strip.addEventListener("pointerup", (event) => {
-      window.setTimeout(() => {
-        if (strip.dataset.dragMoved === "true") return;
-        const target = document.elementFromPoint(event.clientX, event.clientY);
-        const card = target?.closest?.(".visual-card");
-        if (!card || !strip.contains(card)) return;
-        open(card);
-      }, 0);
-    });
-
-    strip.addEventListener("click", (event) => {
-      const card = event.target.closest(".visual-card");
-      if (!card || !strip.contains(card) || strip.dataset.dragMoved === "true") return;
-      open(card);
-    });
-  });
-
   close.addEventListener("click", hide);
   modal.addEventListener("click", (event) => {
     if (event.target === modal) hide();
@@ -189,13 +182,20 @@ function setupStoryModal() {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") hide();
   });
+
+  return open;
 }
 
 function init() {
+  const openStory = setupStoryModal();
   const visualStrip = qs(".visual-strip");
   const visualRail = qs(".visual-rail");
   if (visualStrip && visualRail) {
-    makeDraggableLoop(visualStrip, visualRail, { speed: 0.35 });
+    makeDraggableLoop(visualStrip, visualRail, {
+      onTap: openStory,
+      speed: 0.35,
+      tapSelector: ".visual-card",
+    });
   }
 
   const manifestoRail = qs(".manifesto-rail");
@@ -204,7 +204,6 @@ function init() {
   }
 
   setupPosterImages();
-  setupStoryModal();
 }
 
 document.addEventListener("DOMContentLoaded", init);
