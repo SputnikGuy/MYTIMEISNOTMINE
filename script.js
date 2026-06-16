@@ -146,13 +146,13 @@ function makeDraggableLoop(container, rail, options = {}) {
 
   const normalize = () => {
     if (!setWidth) return;
-    while (x >= 0) x -= setWidth;
-    while (x <= -setWidth * 2) x += setWidth;
+    while (x > -setWidth) x -= setWidth;
+    while (x < -setWidth * 2) x += setWidth;
   };
 
   const apply = () => {
     normalize();
-    rail.style.transform = `translateX(${x}px)`;
+    rail.style.transform = `translate3d(${x}px, 0, 0)`;
   };
 
   const tick = () => {
