@@ -31,7 +31,6 @@
     }
   ],
   "hero": {
-    "eyebrow": "Youth-led campaign",
     "title": "My time is not mine",
     "subtitle": "The right to independent living is also the right to your own time, and barriers keep taking it away.",
     "description": "Part of KEEP Driven, an Erasmus+ project on participation co-financed by the European Union, where young people with disabilities from Italy, France and Latvia shaped a campaign on independent living.",
@@ -47,6 +46,7 @@
     "floatingLine": "Our time belongs to us."
   },
   "campaign": {
+    "eyebrow": "The campaign",
     "title": "Our time belongs to us",
     "lead": "Drag or swipe to explore the campaign visuals. Tap a card to read the full story.",
     "visuals": [
@@ -63,7 +63,7 @@
     ]
   },
   "demand": {
-    "kicker": "Our demand",
+    "kicker": "Our demand / Manifesto",
     "main": "We want to live independently.",
     "body": "We want to decide how we live our daily lives. We want support service systems that adapt to our rhythms. We want accessible transport, flexible education and work opportunities, and the right to be heard when decisions about our lives are made. Our time belongs to us.",
     "closing": "Not someday. Now.",
@@ -78,6 +78,7 @@
     ]
   },
   "keepDriven": {
+    "eyebrow": "The project",
     "title": "What is KEEP Driven",
     "lead": "A pan-European advocacy project where young people with disabilities lead the way: training, study visits and collaborative workshops with participants from Italy, France, Belgium and Latvia.",
     "pillars": [
@@ -114,7 +115,7 @@
         "text": "The voices behind this campaign."
       },
       {
-        "number": "40,000",
+        "number": "40.000",
         "title": "People",
         "text": "Expected to be reached through the campaign."
       }
@@ -123,6 +124,7 @@
     "behindText": "Young people with disabilities aged 18–26 from Italy, France and Latvia, with a priority on women. They are the authors and advocates of this campaign, not its subjects."
   },
   "journey": {
+    "eyebrow": "Timeline",
     "title": "Our journey",
     "lead": "From experience to action: how young people with disabilities became the authors of a European advocacy campaign.",
     "items": [
@@ -149,18 +151,20 @@
     ]
   },
   "positionPaper": {
-    "eyebrow": "Position paper",
+    "eyebrow": "This campaign",
     "title": "Not only visibility. Political change.",
     "lead": "Young people with disabilities must be involved in the decisions that shape their future.",
     "cta": "Download the position paper",
     "url": "#"
   },
   "takePart": {
+    "eyebrow": "Take part",
     "title": "Share your story. Join the conversation.",
     "text": "Have you ever felt that barriers, systems or inaccessible spaces were taking your time away? Join the campaign by spreading the word on social media.",
     "hashtag": "#mytimeisnotmine"
   },
   "gallery": {
+    "eyebrow": "In the making",
     "title": "Behind the campaign",
     "lead": "A visual archive of the campaign documenting the people and conversations behind “My time is not mine”.",
     "items": [
@@ -173,6 +177,7 @@
     ]
   },
   "partners": {
+    "eyebrow": "Who's behind KEEPDRIVEN",
     "title": "Partnership",
     "lead": "An Erasmus+ partnership coordinated by CBM Italia, bringing together five organisations committed to disability inclusion and youth empowerment.",
     "items": [
