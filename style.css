@@ -1437,6 +1437,13 @@
         line-height: 0.86;
       }
 
+      .highlight-inline-mobile {
+        display: inline;
+        width: auto;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+      }
+
       .cta {
         min-height: auto;
         place-items: stretch;
