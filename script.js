@@ -11,6 +11,11 @@ const esc = (value = "") =>
 const link = (item, className = "") =>
   `<a${className ? ` class="${className}"` : ""} href="${esc(item.target || item.url || "#")}">${esc(item.label || item.cta || item.text || "")}</a>`;
 
+const logoTitle = (title = "My Time Is Not Mine") => {
+  const words = esc(title).toUpperCase().split(/\s+/);
+  return `${words.slice(0, 2).join(" ")}<br>${words.slice(2).join(" ")}`;
+};
+
 function render(data) {
   document.documentElement.lang = data.meta?.language || "en";
   document.title = data.meta?.title || "My Time Is Not Mine";
@@ -94,115 +99,133 @@ function render(data) {
 
   return `
     <header class="site-header">
-      <a class="logo" href="#">${esc(data.hero?.title || "My Time Is Not Mine").replaceAll(" ", "<br>")}</a>
+      <a class="logo" href="#">${logoTitle(data.hero?.title || "My Time Is Not Mine")}</a>
       <nav class="nav" aria-label="Main navigation">${navItems}</nav>
     </header>
 
     <main>
-      <section class="hero" style="grid-template-columns: 1fr;">
+      <section class="hero">
         <div class="hero-copy">
-          <div>
-            <span class="eyebrow">${esc(data.hero?.eyebrow)}</span>
+          <div class="section-content">
             <h1>${esc(data.hero?.title)}</h1>
             <p class="hero-sub">${esc(data.hero?.subtitle)}</p>
             <p class="hero-note">${esc(data.hero?.description)}</p>
-          </div>
-          <div class="hero-actions">
-            ${link(data.hero?.primaryCta || {}, "btn")}
-            ${link(data.hero?.secondaryCta || {}, "btn secondary")}
+            <div class="hero-actions">
+              ${link(data.hero?.primaryCta || {}, "btn")}
+              ${link(data.hero?.secondaryCta || {}, "btn secondary")}
+            </div>
           </div>
         </div>
       </section>
 
       <section class="stories" id="stories">
-        <div class="container">
-          <h2 class="section-title">${esc(data.campaign?.title)}</h2>
-          <p class="section-lead">${esc(data.campaign?.lead)}</p>
-          <div class="visual-strip" aria-label="Campaign visuals">${visualCards}</div>
-        </div>
-      </section>
-
-      <section class="manifesto" id="demand">
-        <div class="container">
-          <span class="manifesto-kicker">${esc(data.demand?.kicker)}</span>
-          <div>
-            <div class="demand">${esc(data.demand?.main)}</div>
-            <p class="demand-sub">${esc(data.demand?.body)}</p>
+        <div class="container section-layout">
+          <span class="section-eyebrow">${esc(data.campaign?.eyebrow)}</span>
+          <div class="section-content">
+            <h2 class="section-title">${esc(data.campaign?.title)}</h2>
+            <p class="section-lead">${esc(data.campaign?.lead)}</p>
+            <div class="visual-strip" aria-label="Campaign visuals">${visualCards}</div>
           </div>
         </div>
       </section>
 
-      <section class="stories" aria-label="Manifesto cards">
-        <div class="container">
-          <h2 class="section-title">${esc(data.demand?.closing)}</h2>
-          <div class="manifesto-strip">${manifestoCards}</div>
+      <section class="manifesto" id="demand">
+        <div class="container section-layout">
+          <span class="manifesto-kicker">${esc(data.demand?.kicker)}</span>
+          <div class="manifesto-content">
+            <div class="demand">${esc(data.demand?.main)}</div>
+            <p class="demand-sub">
+              ${esc(data.demand?.body)}
+              <span class="manifesto-closing">${esc(data.demand?.closing)}</span>
+            </p>
+          </div>
+          <div class="manifesto-cards-block" aria-label="Manifesto cards">
+            <div class="manifesto-strip manifesto-rail">${manifestoCards}</div>
+          </div>
         </div>
       </section>
 
       <section class="keep" id="keepdriven">
-        <div class="container">
-          <h2 class="section-title">${esc(data.keepDriven?.title)}</h2>
-          <p class="section-lead">${esc(data.keepDriven?.lead)}</p>
-          <div class="keep-grid">${pillars}</div>
-          <div class="stats-grid">${stats}</div>
-          <div class="callout">
-            <h3>${esc(data.keepDriven?.behindTitle)}</h3>
-            <p>${esc(data.keepDriven?.behindText)}</p>
+        <div class="container section-layout">
+          <span class="section-eyebrow">${esc(data.keepDriven?.eyebrow)}</span>
+          <div class="section-content">
+            <h2 class="section-title">${esc(data.keepDriven?.title)}</h2>
+            <p class="section-lead">${esc(data.keepDriven?.lead)}</p>
+            <div class="keep-grid">${pillars}</div>
+            <div class="stats-grid">${stats}</div>
+            <div class="callout">
+              <h3>${esc(data.keepDriven?.behindTitle)}</h3>
+              <p>${esc(data.keepDriven?.behindText)}</p>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="journey" id="journey">
-        <div class="container">
-          <h2 class="section-title">${esc(data.journey?.title)}</h2>
-          <p class="section-lead">${esc(data.journey?.lead)}</p>
-          <div class="timeline">${journeyItems}</div>
+        <div class="container section-layout">
+          <span class="section-eyebrow">${esc(data.journey?.eyebrow)}</span>
+          <div class="section-content">
+            <h2 class="section-title">${esc(data.journey?.title)}</h2>
+            <p class="section-lead">${esc(data.journey?.lead)}</p>
+            <div class="timeline">${journeyItems}</div>
+          </div>
         </div>
       </section>
 
       <section class="paper" id="paper">
-        <div class="container">
-          <span class="eyebrow">${esc(data.positionPaper?.eyebrow)}</span>
-          <h2 class="section-title">${esc(data.positionPaper?.title)}</h2>
-          <p class="section-lead">${esc(data.positionPaper?.lead)}</p>
-          <div class="hero-actions" style="margin-left:auto;margin-right:auto;">
-            <a class="btn" href="${esc(data.positionPaper?.url || "#")}">${esc(data.positionPaper?.cta)}</a>
+        <div class="container section-layout">
+          <span class="section-eyebrow">${esc(data.positionPaper?.eyebrow)}</span>
+          <div class="section-content">
+            <h2 class="section-title">${esc(data.positionPaper?.title)}</h2>
+            <p class="section-lead">${esc(data.positionPaper?.lead)}</p>
+            <div class="hero-actions paper-actions">
+              <a class="btn" href="${esc(data.positionPaper?.url || "#")}">${esc(data.positionPaper?.cta)}</a>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="cta" id="join">
-        <div class="container">
-          <h2>${esc(data.takePart?.title)}</h2>
-          <p>${esc(data.takePart?.text)}</p>
-          <div class="hashtag">${esc(data.takePart?.hashtag)}</div>
+        <div class="container section-layout">
+          <span class="section-eyebrow">${esc(data.takePart?.eyebrow)}</span>
+          <div class="section-content">
+            <h2>${esc(data.takePart?.title)}</h2>
+            <p>${esc(data.takePart?.text)}</p>
+            <div class="hashtag">${esc(data.takePart?.hashtag)}</div>
+          </div>
         </div>
       </section>
 
       <section class="gallery">
-        <div class="container">
-          <h2 class="section-title">${esc(data.gallery?.title)}</h2>
-          <p class="section-lead">${esc(data.gallery?.lead)}</p>
-          <div class="gallery-grid">${galleryItems}</div>
+        <div class="container section-layout">
+          <span class="section-eyebrow">${esc(data.gallery?.eyebrow)}</span>
+          <div class="section-content">
+            <h2 class="section-title">${esc(data.gallery?.title)}</h2>
+            <p class="section-lead">${esc(data.gallery?.lead)}</p>
+            <div class="gallery-grid">${galleryItems}</div>
+          </div>
         </div>
       </section>
 
       <section class="partners" id="partners">
-        <div class="container">
-          <h2 class="section-title">${esc(data.partners?.title)}</h2>
-          <p class="section-lead">${esc(data.partners?.lead)}</p>
-          <div class="partner-grid">${partnerItems}</div>
+        <div class="container section-layout">
+          <span class="section-eyebrow">${esc(data.partners?.eyebrow)}</span>
+          <div class="section-content">
+            <h2 class="section-title">${esc(data.partners?.title)}</h2>
+            <p class="section-lead">${esc(data.partners?.lead)}</p>
+            <div class="partner-grid">${partnerItems}</div>
 
-          <div class="associated">
-            <h3>${esc(data.partners?.associatedTitle)}</h3>
-            <div class="tag-list">${associated}</div>
-          </div>
+            <div class="associated">
+              <h3>${esc(data.partners?.associatedTitle)}</h3>
+              <div class="tag-list">${associated}</div>
+            </div>
 
-          <div class="associated">
-            <h3>${esc(data.partners?.fundingTitle)}</h3>
-            <p class="microcopy" style="color:rgba(255,255,255,0.78); margin-top:0;">
-              ${esc(data.partners?.fundingText)}
-            </p>
+            <div class="associated">
+              <h3>${esc(data.partners?.fundingTitle)}</h3>
+              <p class="microcopy funding-copy">
+                ${esc(data.partners?.fundingText)}
+              </p>
+            </div>
           </div>
         </div>
       </section>
