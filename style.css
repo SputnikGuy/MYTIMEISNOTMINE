@@ -837,6 +837,7 @@
     .partners {
       background: var(--cyan);
       color: var(--white);
+      border-top: 0;
     }
 
     .partners .section-eyebrow {
@@ -846,35 +847,31 @@
     .partner-grid {
       margin-top: 44px;
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      border-top: var(--line) solid var(--white);
-      border-left: var(--line) solid var(--white);
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      border-top: var(--line) solid var(--black);
+      border-left: var(--line) solid var(--black);
     }
 
     .partner-card {
-      min-height: 220px;
+      min-height: 320px;
       padding: 24px;
-      border-right: var(--line) solid var(--white);
-      border-bottom: var(--line) solid var(--white);
+      border-right: var(--line) solid var(--black);
+      border-bottom: var(--line) solid var(--black);
       background: var(--white);
       color: var(--black);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 28px;
     }
 
     .partner-card {
-      grid-column: span 2;
+      grid-column: span 1;
     }
 
     .partner-card.coordinator {
-      grid-column: span 3;
-      min-height: 280px;
-    }
-
-    .partner-card.coordinator {
-      background: var(--black);
-      color: var(--white);
+      grid-column: span 1;
+      min-height: 320px;
     }
 
     .partner-kicker {
@@ -887,7 +884,7 @@
 
     .partner-title {
       margin-top: 18px;
-      font-size: clamp(28px, 3.6vw, 54px);
+      font-size: clamp(24px, 2.2vw, 36px);
       line-height: 0.92;
       text-transform: uppercase;
     }
@@ -898,6 +895,22 @@
       font-weight: 950;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+    }
+
+    .partner-logo-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 110px;
+      padding: 12px;
+      border-top: var(--line) solid var(--black);
+    }
+
+    .partner-logo-link img {
+      display: block;
+      max-width: 100%;
+      max-height: 90px;
+      object-fit: contain;
     }
 
     .associated {
@@ -917,7 +930,7 @@
 
     .funding-copy {
       color: rgba(255,255,255,0.78);
-      margin-top: 0;
+      margin-top: 24px;
     }
 
     .tag-list {
@@ -936,6 +949,46 @@
       text-transform: uppercase;
       letter-spacing: 0.04em;
       border: var(--line) solid var(--white);
+    }
+
+    .funding-block {
+      margin-top: clamp(54px, 7vw, 96px);
+      padding-top: 0;
+    }
+
+    .funding-title {
+      max-width: 980px;
+      font-family: "BBH Bogle", Impact, "Arial Black", sans-serif;
+      font-size: clamp(42px, 7vw, 96px);
+      line-height: 0.9;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .funding-logo-grid {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: var(--line) solid var(--black);
+      border-left: var(--line) solid var(--black);
+    }
+
+    .funding-logo-card {
+      min-height: 220px;
+      padding: clamp(24px, 4vw, 52px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: var(--line) solid var(--black);
+      border-bottom: var(--line) solid var(--black);
+      background: var(--white);
+    }
+
+    .funding-logo-card img {
+      display: block;
+      max-width: min(100%, 360px);
+      max-height: 140px;
+      object-fit: contain;
     }
 
     footer {
@@ -1250,6 +1303,17 @@
 @media (min-width: 769px) and (max-width: 1200px) {
   .visual-card { flex: 0 0 50vw !important; min-width: 50vw !important; }
   .gallery-card { flex: 0 0 50vw !important; min-width: 50vw !important; }
+}
+@media (max-width: 1100px) {
+  .partner-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 720px) {
+  .partner-grid,
+  .funding-logo-grid {
+    grid-template-columns: 1fr;
+  }
 }
 .story-modal {
   display: none;
