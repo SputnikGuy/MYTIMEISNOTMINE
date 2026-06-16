@@ -1328,9 +1328,16 @@
       }
 
       .stats-grid {
-        grid-template-columns: repeat(3, minmax(260px, 1fr));
-        overflow-x: auto;
-        scrollbar-width: thin;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+        overflow-x: visible;
+      }
+
+      .stat-card {
+        min-height: auto;
+      }
+
+      .stat-card > div:last-child {
+        height: auto;
       }
 
       .problem-card {
@@ -1503,19 +1510,36 @@
       }
 
       .stats-grid {
-                      grid-template-columns: repeat(3, 1fr);
-                      overflow-x: visible;
+        grid-template-columns: 1fr;
+        overflow-x: visible;
       }
 
       .stat-number {
-        font-size: clamp(30px, 8.5vw, 44px);
+        font-size: clamp(52px, 18vw, 76px);
       }
 
-                  .stat-card {
-                                  min-height: auto;
-                                  padding: 14px 10px;
-                                  gap: 10px;
-                  }
+      .stat-title {
+        font-size: clamp(24px, 7.5vw, 34px);
+        line-height: 1.02;
+      }
+
+      .stat-copy {
+        font-size: clamp(18px, 5vw, 22px);
+        line-height: 1.25;
+      }
+
+      .stat-card {
+        min-height: auto;
+        padding: 22px 20px;
+        border-right: var(--line) solid var(--white);
+        border-bottom: var(--line) solid var(--white);
+        gap: 22px;
+      }
+
+      .stat-card > div:last-child {
+        align-self: start;
+        height: auto;
+      }
 
       .gallery-cell,
       .gallery-cell:nth-child(1),
