@@ -105,7 +105,9 @@ function prepareLoopRail(rail) {
     return clone;
   });
 
-  before.forEach((clone) => rail.insertBefore(clone, rail.firstChild));
+  const beforeFragment = document.createDocumentFragment();
+  before.forEach((clone) => beforeFragment.appendChild(clone));
+  rail.insertBefore(beforeFragment, rail.firstChild);
   after.forEach((clone) => rail.appendChild(clone));
   rail.dataset.loopReady = "true";
 
@@ -297,12 +299,53 @@ function imageAltFromPath(path) {
   return fileName.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " ");
 }
 
+function uniqueImages(images) {
+  return Array.from(new Set(images));
+}
+
+function setupImageModal() {
+  const modal = qs(".image-modal");
+  const image = qs(".image-modal img", modal);
+  const close = qs(".image-modal-close", modal);
+
+  if (!modal || !image || !close) return () => {};
+
+  const hide = () => {
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    image.removeAttribute("src");
+    image.alt = "";
+  };
+
+  const open = (card) => {
+    const cardImage = qs("img", card);
+    if (!cardImage?.src) return;
+
+    image.src = cardImage.src;
+    image.alt = cardImage.alt || "Gallery image";
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    close.focus();
+  };
+
+  close.addEventListener("click", hide);
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) hide();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.classList.contains("open")) hide();
+  });
+
+  return open;
+}
+
 async function setupGalleryCarousel() {
   const carousel = qs(".gallery-carousel");
   const rail = qs(".gallery-rail");
   if (!carousel || !rail) return;
 
-  const images = await getGalleryImages();
+  const images = uniqueImages(await getGalleryImages());
+  const openImage = setupImageModal();
   const cards = images.map((src) => {
     const card = document.createElement("article");
     const image = document.createElement("img");
@@ -319,7 +362,11 @@ async function setupGalleryCarousel() {
   rail.replaceChildren(...cards);
 
   if (images.length) {
-    makeDraggableLoop(carousel, rail, { speed: -0.25 });
+    makeDraggableLoop(carousel, rail, {
+      onTap: openImage,
+      speed: -0.25,
+      tapSelector: ".gallery-card",
+    });
   }
 }
 
