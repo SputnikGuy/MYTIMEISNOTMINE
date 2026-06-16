@@ -225,6 +225,10 @@
       text-transform: uppercase;
     }
 
+    .mobile-hero-break {
+      display: none;
+    }
+
     .hero-sub {
       margin-top: 34px;
       max-width: 980px;
@@ -1410,6 +1414,10 @@
 
       .hero-copy {
         padding: 36px 16px;
+      }
+
+      .mobile-hero-break {
+        display: block;
       }
 
       .hero .container {
