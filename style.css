@@ -1466,13 +1466,20 @@
         font-size: clamp(118px, 34vw, 160px);
       }
 
-      .stat-card {
-        gap: 42px;
+      .stats-grid {
+                      grid-template-columns: repeat(3, 1fr);
+                      overflow-x: visible;
       }
 
       .stat-number {
-        font-size: clamp(122px, 34vw, 170px);
+        font-size: clamp(22px, 6vw, 34px);
       }
+
+                  .stat-card {
+                                  min-height: auto;
+                                  padding: 10px 12px;
+                                  gap: 10px;
+                  }
 
       .gallery-cell,
       .gallery-cell:nth-child(1),
