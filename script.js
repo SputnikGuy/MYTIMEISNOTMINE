@@ -125,8 +125,12 @@ function makeDraggableLoop(container, rail, options = {}) {
   let pointerDown = false;
   let moved = false;
   let frame = null;
+  let glideVelocity = 0;
+  let lastMoveX = 0;
+  let lastMoveTime = 0;
   const speed = options.speed || 0;
   const dragMultiplier = options.dragMultiplier || 1;
+  const glideFriction = options.glideFriction || 0.94;
 
   const measure = () => {
     const originals = qsa(":scope > *:not([data-clone])", rail);
@@ -152,7 +156,12 @@ function makeDraggableLoop(container, rail, options = {}) {
   };
 
   const tick = () => {
-    if (!pointerDown && speed) {
+    if (!pointerDown && Math.abs(glideVelocity) > 0.05) {
+      x += glideVelocity;
+      glideVelocity *= glideFriction;
+      apply();
+    } else if (!pointerDown && speed) {
+      glideVelocity = 0;
       x -= speed;
       apply();
     }
@@ -165,6 +174,9 @@ function makeDraggableLoop(container, rail, options = {}) {
     container.dataset.dragMoved = "false";
     startX = event.clientX;
     startOffset = x;
+    lastMoveX = event.clientX;
+    lastMoveTime = event.timeStamp || performance.now();
+    glideVelocity = 0;
     container.classList.add("dragging");
     rail.style.transition = "none";
     container.setPointerCapture?.(event.pointerId);
@@ -178,12 +190,18 @@ function makeDraggableLoop(container, rail, options = {}) {
       container.dataset.dragMoved = "true";
     }
     x = startOffset + (delta * dragMultiplier);
+    const now = event.timeStamp || performance.now();
+    const elapsed = Math.max(1, now - lastMoveTime);
+    glideVelocity = ((event.clientX - lastMoveX) / elapsed) * 16 * dragMultiplier;
+    lastMoveX = event.clientX;
+    lastMoveTime = now;
     apply();
   };
 
   const onPointerUp = (event) => {
     const didMove = moved;
     pointerDown = false;
+    if (!didMove) glideVelocity = 0;
     container.dataset.dragMoved = didMove ? "true" : "false";
     container.classList.remove("dragging");
     container.releasePointerCapture?.(event.pointerId);
@@ -412,8 +430,9 @@ async function setupGalleryCarousel() {
   if (images.length) {
     makeDraggableLoop(carousel, rail, {
       onTap: openImage,
-      dragMultiplier: 1.45,
-      speed: -0.35,
+      dragMultiplier: 1.85,
+      glideFriction: 0.955,
+      speed: -0.28,
       tapSelector: ".gallery-card",
     });
   }
@@ -427,8 +446,9 @@ async function init() {
   if (visualStrip && visualRail) {
     makeDraggableLoop(visualStrip, visualRail, {
       onTap: openStory,
-      dragMultiplier: 1.55,
-      speed: 0.48,
+      dragMultiplier: 1.95,
+      glideFriction: 0.955,
+      speed: 0.38,
       tapSelector: ".visual-card",
     });
   }

@@ -289,7 +289,7 @@
 
     .highlight-teal {
       display: inline-block;
-      padding: 0.05em 0.12em;
+      padding: 0.05em 0.15em;
       background: var(--cyan);
       color: var(--white);
       line-height: 0.95;
@@ -297,7 +297,7 @@
 
     .highlight-black {
       display: inline-block;
-      padding: 0.05em 0.12em;
+      padding: 0.05em 0.15em;
       background: var(--black);
       color: var(--white);
       line-height: 0.95;
@@ -305,7 +305,7 @@
 
     .highlight-pink {
       display: inline-block;
-      padding: 0.05em 0.12em;
+      padding: 0.05em 0.15em;
       background: var(--pink);
       color: var(--black);
       line-height: 0.95;
@@ -1435,8 +1435,20 @@
       }
 
       .hero h1 {
-        font-size: clamp(58px, 16vw, 88px) !important;
+        font-size: clamp(78px, 19vw, 104px) !important;
+        line-height: 0.9 !important;
+        max-width: 100%;
+      }
+
+      .hero-title-line {
+        white-space: nowrap;
+      }
+
+      .hero h1 span {
         line-height: 0.86 !important;
+        padding: 0.02em 0.08em 0.05em !important;
+        margin: 0 0.03em !important;
+        vertical-align: baseline !important;
       }
 
       .manifesto-closing {
@@ -1449,8 +1461,8 @@
         width: auto;
         position: relative;
         top: 0.06em;
-        padding: 0 0.07em 0.01em;
-        line-height: 0.92;
+        padding: 0.05em 0.15em;
+        line-height: 0.95;
         -webkit-box-decoration-break: clone;
         box-decoration-break: clone;
       }
@@ -1683,7 +1695,7 @@
 .visual-card {
   flex: 0 0 calc(100vw / 3);
   min-width: calc(100vw / 3);
-  aspect-ratio: 4/5;
+  aspect-ratio: 2/3;
   background: #e5c222;
   background-position: center;
   background-size: cover;
