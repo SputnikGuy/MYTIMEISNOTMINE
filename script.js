@@ -251,6 +251,9 @@ function setupPosterImages() {
     image.addEventListener("load", () => {
       qsa(`.visual-card[data-poster="${posterPath}"]`).forEach((card) => {
         card.style.backgroundImage = `url("${posterPath}")`;
+        card.style.backgroundPosition = "center";
+        card.style.backgroundRepeat = "no-repeat";
+        card.style.backgroundSize = "contain";
         card.classList.add("poster-loaded");
       });
     });

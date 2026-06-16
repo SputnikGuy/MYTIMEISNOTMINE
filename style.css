@@ -1698,7 +1698,8 @@
   aspect-ratio: 2/3;
   background: #e5c222;
   background-position: center;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
   border-top: 0 !important;
   border-bottom: none;
   border-left: none;
