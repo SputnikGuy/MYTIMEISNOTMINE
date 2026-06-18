@@ -1011,6 +1011,12 @@
       font-weight: 900;
     }
 
+    .cta p a {
+      text-decoration: underline;
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.12em;
+    }
+
     .hashtag {
       display: inline-block;
       margin-top: 34px;
