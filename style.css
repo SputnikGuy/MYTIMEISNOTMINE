@@ -1565,7 +1565,7 @@
       }
 
       .cta h2.cta-title {
-        font-size: clamp(42px, 13.2vw, 82px) !important;
+        font-size: clamp(36px, 11.3vw, 70px) !important;
       }
 
       .cta-title-highlight {
