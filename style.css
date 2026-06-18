@@ -2042,6 +2042,7 @@
 }
 .modal-header {
   padding: 32px 40px 24px;
+  border-bottom: var(--line) solid var(--black);
 }
 .modal-header h3 {
   font-family: "BBH Bogle", Impact, "Arial Black", sans-serif;
