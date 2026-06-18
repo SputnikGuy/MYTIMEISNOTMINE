@@ -1333,6 +1333,7 @@
       .site-header {
         grid-template-columns: minmax(0, 1fr) 64px;
         align-items: stretch;
+        background: var(--yellow);
       }
 
       .menu-toggle {
@@ -1414,6 +1415,7 @@
         overflow: visible;
         border-left: 0;
         border-top: var(--line) solid var(--black);
+        background: var(--yellow);
       }
 
       .site-header.menu-open .nav {
@@ -1427,6 +1429,7 @@
         padding: 0 16px;
         border-right: 0;
         border-bottom: var(--line) solid var(--black);
+        background: var(--white);
       }
 
       .hero {
@@ -1507,14 +1510,20 @@
         display: inline;
         width: auto;
         position: static;
-        padding: 0.03em 0.15em 0.07em;
-        line-height: 1.34;
+        padding: 0.05em 0.15em;
+        line-height: 0.95;
         -webkit-box-decoration-break: clone;
         box-decoration-break: clone;
       }
 
       .paper .section-title {
-        line-height: 0.98 !important;
+        line-height: 0.86 !important;
+      }
+
+      .cta .section-title > span {
+        padding: 0.05em 0.15em !important;
+        margin: 0 !important;
+        line-height: 0.95 !important;
       }
 
       .cta {
