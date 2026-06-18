@@ -1564,7 +1564,7 @@
         line-height: 0.86 !important;
       }
 
-      .cta-title {
+      .cta h2.cta-title {
         font-size: clamp(42px, 13.2vw, 82px) !important;
       }
 
