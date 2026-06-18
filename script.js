@@ -361,6 +361,40 @@ function setupImageModal() {
   return open;
 }
 
+function setupPrivacyModal() {
+  const modal = qs(".privacy-modal");
+  const trigger = qs(".privacy-link");
+  const close = qs(".privacy-close", modal);
+  if (!modal || !trigger || !close) return;
+
+  let previousFocus = null;
+
+  const hide = () => {
+    if (!modal.classList.contains("open")) return;
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("privacy-open");
+    previousFocus?.focus();
+  };
+
+  const open = () => {
+    previousFocus = document.activeElement;
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("privacy-open");
+    close.focus();
+  };
+
+  trigger.addEventListener("click", open);
+  close.addEventListener("click", hide);
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) hide();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") hide();
+  });
+}
+
 function setupManifestoSlider() {
   const cards = qsa(".manifesto-slider .manifesto-card");
   const prev = qs(".manifesto-prev");
@@ -443,6 +477,7 @@ async function setupGalleryCarousel() {
 
 async function init() {
   setupMobileMenu();
+  setupPrivacyModal();
   const openStory = setupStoryModal();
   const visualStrip = qs(".visual-strip");
   const visualRail = qs(".visual-rail");
