@@ -1564,6 +1564,15 @@
         line-height: 0.86 !important;
       }
 
+      .cta-title {
+        font-size: clamp(42px, 13.2vw, 82px) !important;
+      }
+
+      .cta-title-highlight {
+        display: inline-block;
+        white-space: nowrap;
+      }
+
       .cta {
         min-height: auto;
         place-items: stretch;
