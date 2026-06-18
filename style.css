@@ -84,7 +84,7 @@
       grid-template-columns: minmax(250px, 0.6fr) minmax(520px, 1fr);
       align-items: center;
       border-bottom: var(--line) solid var(--black);
-      background: rgba(255, 255, 255, 0.92);
+      background: var(--yellow);
       backdrop-filter: blur(14px);
     }
 
@@ -150,6 +150,7 @@
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.04em;
+      background: var(--white);
     }
 
     .nav a:hover {
@@ -550,7 +551,7 @@
     }
 
     .demand {
-      font-size: var(--text-display);
+      font-size: var(--text-section);
       line-height: 0.9;
       letter-spacing: 0;
       text-transform: uppercase;
@@ -569,13 +570,30 @@
     }
 
     .manifesto-closing {
-      display: block;
+      display: flex;
+      width: fit-content;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.06em;
       margin-top: 0.62em;
       font-family: "BBH Bogle", Impact, Arial Black, sans-serif;
-      font-size: var(--text-display);
+      font-size: var(--text-section);
       line-height: 0.9;
       font-weight: 400;
       text-transform: uppercase;
+    }
+
+    .manifesto-highlight {
+      display: block;
+      width: fit-content;
+      padding: 0.05em 0.15em;
+      background: var(--black);
+      color: var(--white);
+      line-height: 0.95;
+    }
+
+    .manifesto-highlight-accent {
+      color: var(--orange);
     }
 
     .manifesto-cards-block {
@@ -1000,6 +1018,20 @@
       text-transform: uppercase;
     }
 
+    .cta-title-highlight {
+      display: inline-block;
+      padding: 0.05em 0.15em;
+      background: var(--pink);
+      color: var(--black);
+      line-height: 0.95;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+
+    .cta-title-rest {
+      display: block;
+    }
+
     .cta p {
       max-width: 820px;
       margin-top: 24px;
@@ -1333,6 +1365,7 @@
       .site-header {
         grid-template-columns: minmax(0, 1fr) 64px;
         align-items: stretch;
+        background: var(--yellow);
       }
 
       .menu-toggle {
@@ -1341,6 +1374,9 @@
         grid-row: 1;
         border-right: 0;
         border-left: var(--line) solid var(--black);
+        height: auto;
+        min-height: 64px;
+        align-self: stretch;
       }
 
       .logo {
@@ -1414,6 +1450,7 @@
         overflow: visible;
         border-left: 0;
         border-top: var(--line) solid var(--black);
+        background: var(--yellow);
       }
 
       .site-header.menu-open .nav {
@@ -1427,6 +1464,7 @@
         padding: 0 16px;
         border-right: 0;
         border-bottom: var(--line) solid var(--black);
+        background: var(--white);
       }
 
       .hero {
@@ -1449,7 +1487,8 @@
 
       .menu-toggle {
         width: 58px;
-        height: 58px;
+        height: auto;
+        min-height: 58px;
       }
 
       .logo {
@@ -1504,17 +1543,48 @@
       }
 
       .highlight-inline-mobile {
-        display: inline;
-        width: auto;
+        display: inline-flex;
+        width: fit-content;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.06em;
         position: static;
-        padding: 0.03em 0.15em 0.07em;
-        line-height: 1.34;
-        -webkit-box-decoration-break: clone;
-        box-decoration-break: clone;
+        padding: 0;
+        background: transparent;
+        line-height: inherit;
+        vertical-align: top;
+      }
+
+      .highlight-inline-mobile > span {
+        display: block;
+        width: fit-content;
+        padding: 0.05em 0.15em;
+        background: var(--cyan);
+        color: var(--white);
+        line-height: 0.95;
       }
 
       .paper .section-title {
-        line-height: 0.98 !important;
+        line-height: 0.86 !important;
+      }
+
+      .cta-title-highlight {
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        flex-wrap: wrap;
+        row-gap: 0.06em;
+        padding: 0;
+        background: transparent;
+        white-space: normal;
+      }
+
+      .cta-title-highlight > span {
+        display: block;
+        padding: 0.05em 0.15em;
+        background: var(--pink);
+        color: var(--black);
+        line-height: 0.95;
       }
 
       .cta {
@@ -1577,7 +1647,7 @@
       }
 
       .demand {
-        font-size: clamp(48px, 13.8vw, 64px) !important;
+        font-size: clamp(58px, 16vw, 88px) !important;
         max-width: calc(100vw - 32px);
         overflow-wrap: normal;
       }
@@ -1972,6 +2042,7 @@
 }
 .modal-header {
   padding: 32px 40px 24px;
+  border-bottom: var(--line) solid var(--black);
 }
 .modal-header h3 {
   font-family: "BBH Bogle", Impact, "Arial Black", sans-serif;
