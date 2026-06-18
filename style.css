@@ -570,7 +570,11 @@
     }
 
     .manifesto-closing {
-      display: block;
+      display: flex;
+      width: fit-content;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.06em;
       margin-top: 0.62em;
       font-family: "BBH Bogle", Impact, Arial Black, sans-serif;
       font-size: var(--text-section);
@@ -1015,7 +1019,7 @@
     }
 
     .cta-title-highlight {
-      display: inline;
+      display: inline-block;
       padding: 0.05em 0.15em;
       background: var(--pink);
       color: var(--black);
@@ -1564,13 +1568,23 @@
         line-height: 0.86 !important;
       }
 
-      .cta h2.cta-title {
-        font-size: clamp(36px, 11.3vw, 70px) !important;
+      .cta-title-highlight {
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        flex-wrap: wrap;
+        row-gap: 0.06em;
+        padding: 0;
+        background: transparent;
+        white-space: normal;
       }
 
-      .cta-title-highlight {
-        display: inline-block;
-        white-space: nowrap;
+      .cta-title-highlight > span {
+        display: block;
+        padding: 0.05em 0.15em;
+        background: var(--pink);
+        color: var(--black);
+        line-height: 0.95;
       }
 
       .cta {
