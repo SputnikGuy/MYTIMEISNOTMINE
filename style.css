@@ -84,7 +84,7 @@
       grid-template-columns: minmax(250px, 0.6fr) minmax(520px, 1fr);
       align-items: center;
       border-bottom: var(--line) solid var(--black);
-      background: rgba(255, 255, 255, 0.92);
+      background: var(--yellow);
       backdrop-filter: blur(14px);
     }
 
@@ -150,6 +150,7 @@
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.04em;
+      background: var(--white);
     }
 
     .nav a:hover {
@@ -550,7 +551,7 @@
     }
 
     .demand {
-      font-size: var(--text-display);
+      font-size: var(--text-section);
       line-height: 0.9;
       letter-spacing: 0;
       text-transform: uppercase;
@@ -569,7 +570,7 @@
     }
 
     .manifesto-closing {
-      display: inline-flex;
+      display: flex;
       width: fit-content;
       flex-direction: column;
       align-items: flex-start;
@@ -1370,6 +1371,7 @@
       .site-header {
         grid-template-columns: minmax(0, 1fr) 64px;
         align-items: stretch;
+        background: var(--yellow);
       }
 
       .menu-toggle {
@@ -1378,6 +1380,9 @@
         grid-row: 1;
         border-right: 0;
         border-left: var(--line) solid var(--black);
+        height: auto;
+        min-height: 64px;
+        align-self: stretch;
       }
 
       .logo {
@@ -1451,6 +1456,7 @@
         overflow: visible;
         border-left: 0;
         border-top: var(--line) solid var(--black);
+        background: var(--yellow);
       }
 
       .site-header.menu-open .nav {
@@ -1464,6 +1470,7 @@
         padding: 0 16px;
         border-right: 0;
         border-bottom: var(--line) solid var(--black);
+        background: var(--white);
       }
 
       .hero {
@@ -1486,7 +1493,8 @@
 
       .menu-toggle {
         width: 58px;
-        height: 58px;
+        height: auto;
+        min-height: 58px;
       }
 
       .logo {
@@ -1645,7 +1653,7 @@
       }
 
       .demand {
-        font-size: clamp(48px, 13.8vw, 64px) !important;
+        font-size: clamp(58px, 16vw, 88px) !important;
         max-width: calc(100vw - 32px);
         overflow-wrap: normal;
       }
@@ -2040,6 +2048,7 @@
 }
 .modal-header {
   padding: 32px 40px 24px;
+  border-bottom: var(--line) solid var(--black);
 }
 .modal-header h3 {
   font-family: "BBH Bogle", Impact, "Arial Black", sans-serif;
