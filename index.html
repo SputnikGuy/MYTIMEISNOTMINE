@@ -27,7 +27,66 @@
         <div class="hero-copy">
           
         <div class="container" style=""><div class="section-layout"><span class="hero-eyebrow-spacer" aria-hidden="true"></span><div class="section-content">
-            <h1 style="line-height: 1;">My time<br class="mobile-hero-break"><span class="hero-title-line"> is <span style="background:#000;color:#fff;display:inline-block;vertical-align:middle;line-height:1;padding:0.05em 0.1em;margin:-0.15em 0;">NOT</span> mine</span></h1>
+            <h1 class="hero-logo-sr">My time is not mine</h1>
+            <style>
+              .hero-logo-sr {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
+                border: 0;
+              }
+
+              .hero-logo-frame {
+                width: min(1120px, 100%);
+                min-height: clamp(170px, 24vw, 340px);
+                display: flex;
+                align-items: center;
+              }
+
+              .hero-random-logo {
+                display: block;
+                width: min(100%, 1080px);
+                max-height: clamp(170px, 24vw, 340px);
+                object-fit: contain;
+                object-position: left center;
+              }
+
+              @media (max-width: 620px) {
+                .hero-logo-frame {
+                  min-height: clamp(110px, 38vw, 180px);
+                }
+
+                .hero-random-logo {
+                  max-height: clamp(110px, 38vw, 180px);
+                }
+              }
+            </style>
+            <div class="hero-logo-frame" aria-hidden="true">
+              <img class="hero-random-logo" src="assets/hero-logos/mtinm-1.svg" alt="">
+            </div>
+            <script>
+              (() => {
+                const logos = [
+                  "assets/hero-logos/mtinm-1.svg",
+                  "assets/hero-logos/mtinm-2.svg",
+                  "assets/hero-logos/mtinm-3.svg",
+                  "assets/hero-logos/mtinm-4.svg",
+                  "assets/hero-logos/mtinm-5.svg",
+                  "assets/hero-logos/mtinm-6.svg",
+                  "assets/hero-logos/mtinm-7.svg",
+                  "assets/hero-logos/mtinm-8.svg"
+                ];
+                const frame = document.currentScript.previousElementSibling;
+                const logo = frame && frame.querySelector(".hero-random-logo");
+                if (!logo) return;
+                logo.src = logos[Math.floor(Math.random() * logos.length)];
+              })();
+            </script>
             <p class="hero-sub">The right to independent living is also the right to your own time and barriers keep taking it away.</p>
             <p class="hero-note">Part of KEEP Driven, an Erasmus+ project on participation co-financed by the European Union, where young people with disabilities from Italy, France and Latvia shaped a campaign on independent living.</p>
           </div></div></div></div>
